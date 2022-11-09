@@ -7,6 +7,13 @@ public class CardTest {
         System.out.println("Card 1 is the "+ card1);
         System.out.println("Card 2 is the "+ card2);
 
+        if(card1.compareTo(card2) > 0 ){
+            System.out.println("Card 1 is bigger");
+        } else if (card1.compareTo(card2) < 0) {
+            System.out.println("Card 2 is bigger");
+        }
+        else System.out.println("Cards have same value");
+
     }
 
 }

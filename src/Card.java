@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Card {
+public class Card implements Comparable<Card>{
     private final int RANK, SUIT;
     private static final Random GENERATOR = new Random();
 
@@ -21,8 +21,19 @@ public class Card {
         return SUITS[SUIT];
     }
 
+    public int getRankValue(){
+        return RANK;
+    }
+
     @Override
     public String toString(){
         return getRank() + " of " + getSuit();
+    }
+
+    @Override
+    public int compareTo(Card otherCard){
+        if(this.getRankValue() > otherCard.getRankValue()) return 1;
+        else if(this.getRankValue() < otherCard.getRankValue()) return -1;
+        else return 0;
     }
 }
